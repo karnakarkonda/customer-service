@@ -1,0 +1,11 @@
+package com.techie.microservices.customerservice.repository;
+
+import com.techie.microservices.customerservice.entity.Customer;
+import jakarta.validation.constraints.Email;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface CustomerRepository extends JpaRepository<Customer, UUID> {
+    boolean existsByEmail(@Email String email);
+}
